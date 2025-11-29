@@ -333,6 +333,30 @@ class TicketControlView(discord.ui.View):
             await interaction.response.send_message("Erro: Ticket não encontrado.", ephemeral=True)
             return
         
+        # Verifica se o ticket está claimed
+        if not ticket_data['claimed_by']:
+            await interaction.response.send_message(
+                embed=self.embed_builder.create_error_embed(
+                    "Ticket Não Assumido",
+                    "Este ticket não foi assumido por ninguém."
+                ),
+                ephemeral=True
+            )
+            return
+        
+        # **VERIFICAÇÃO DE AUTORIZAÇÃO DE DESCLAIM**
+        if ticket_data['claimed_by'] != interaction.user.id:
+            claimer = interaction.guild.get_member(ticket_data['claimed_by'])
+            claimer_mention = claimer.mention if claimer else "Staff Desconhecido"
+            await interaction.response.send_message(
+                embed=self.embed_builder.create_error_embed(
+                    "Sem Autorização",
+                    f"Apenas o staff que assumiu o ticket ({claimer_mention}) pode liberá-lo."
+                ),
+                ephemeral=True
+            )
+            return
+        
         # Remove claim
         await self.db.disclaim_ticket(interaction.channel.id)
         
