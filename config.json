@@ -1,0 +1,31 @@
+{
+  "bot_name": "Ticket Bot",
+  "bot_color": "0x5865F2",
+  "categories": {
+    "suporte": {
+      "name": "Suporte",
+      "emoji": "🛠️",
+      "description": "Precisa de ajuda técnica ou suporte geral"
+    },
+    "compras": {
+      "name": "Compras",
+      "emoji": "🛒",
+      "description": "Dúvidas sobre produtos, pagamentos ou pedidos"
+    },
+    "denuncia": {
+      "name": "Denúncia",
+      "emoji": "⚠️",
+      "description": "Reportar comportamento inadequado ou violações"
+    },
+    "parcerias": {
+      "name": "Parcerias",
+      "emoji": "🤝",
+      "description": "Propostas de parceria ou colaboração"
+    },
+    "customizado": {
+      "name": "Outro Assunto",
+      "emoji": "📝",
+      "description": "Outros assuntos não listados acima"
+    }
+  }
+}
