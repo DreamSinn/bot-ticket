@@ -161,9 +161,3 @@ Você pode personalizar as categorias de ticket e a aparência do bot editando o
 - `bot_name`: Nome que aparece no rodapé dos embeds.
 - `bot_color`: Cor principal dos embeds (em formato hexadecimal).
 - `categories`: Objeto contendo as categorias de ticket que podem ser usadas nos painéis.
-
----
-
-## 💖 Créditos
-
-Este bot foi desenvolvido por **Manus AI** como uma solução completa e de código aberto para comunidades no Discord.
